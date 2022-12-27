@@ -1,14 +1,13 @@
-const navItemEl = [...document.querySelectorAll('li.item')];
-console.log(navItemEl);
+const totalItem = document.querySelectorAll(".item");
+const totalItemali = totalItem.length;
 
-const navTitleEl = navItemEl.map((item) => {
-const title = [...item.children];
+console.log(`Number of categories: ${totalItemali}`);
 
-const itemObj = {};
+totalItem.forEach((element) => {
+  const elementTitle = element.querySelector("h2").textContent;
+  const elementList = element.querySelectorAll("li");
+  const elementLength = elementList.length;
 
-itemObj[title[0].textContent] = [...title[1].children].map(
-  (item) => item.textContent
-);
-
-console.log(itemObj);
-})
+  console.log(`Category: ${elementTitle}`);
+  console.log(`Elements: ${elementLength}`);
+});
